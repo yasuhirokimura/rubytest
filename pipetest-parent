@@ -1,0 +1,38 @@
+#!/usr/local/bin/ruby -W
+# -*- coding: utf-8 -*-
+
+CHILD_PROGRAM = "#{ENV['HOME']}/work/rubytest/pipetest-child"
+LOOP_COUNT = 3
+OUTPUT_FILE = "./pipetest-parent.log"
+
+out = open(OUTPUT_FILE, "w", 0644)
+Process.daemon
+LOOP_COUNT.times do
+  r, w = IO.pipe
+  childpid = Process.fork
+  if childpid
+    # 親プロセス
+    w.close
+    STDOUT.reopen(out)
+    STDERR.reopen(out)
+    sigchld_handler = Proc.new do
+      Signal.trap(:CHLD, "DEFAULT")
+      r.close
+    end
+    Signal.trap(:CHLD, sigchld_handler)
+    r.each_line do |line|
+      puts line
+      $stdout.flush
+    end
+    Process.waitpid(childpid)
+    puts("child process died.")
+    $stdout.flush
+  else
+    # 子プロセス
+    r.close
+    STDOUT.reopen(w)
+    exec(CHILD_PROGRAM)
+    $stderr.puts("failed to exec #{CHILD_PROGRAM}.")
+    exit(false)
+  end
+end

@@ -1,0 +1,14 @@
+#!/usr/bin/ruby -w
+
+hoge = Hoge.new("Foo bar baz")
+hoge.echo
+
+class Hoge
+  def initialize(hoge)
+    @hoge = hoge
+  end
+
+  def echo
+    puts @hoge
+  end
+end

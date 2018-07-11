@@ -1,0 +1,25 @@
+#!/usr/bin/ruby -w
+# coding: utf-8
+
+print(RUBY_DESCRIPTION, "\n\n")
+
+if (ARGV.length != 1)
+  printf($stderr,"Usage: %s FileName\n",  $PROGRAM_NAME)
+  exit(1)
+end
+
+require "psych"
+require "yaml"
+
+yamlfile = ARGV[0]
+
+File.open(yamlfile, 'r:bom|utf-8') do |input|
+  begin
+    Psych.parse_stream(input, yamlfile) do |node|
+      p node.to_ruby
+    end
+  rescue Psych::SyntaxError => e
+    p e.message
+    exit(-1)
+  end
+end

@@ -1,0 +1,17 @@
+#!/usr/local/bin/ruby -W
+
+handler = Proc.new do
+  STDOUT.close
+  exit(true)
+end
+Signal.trap(:HUP, handler)
+Signal.trap(:INT, handler)
+Signal.trap(:QUIT, handler)
+Signal.trap(:TERM, handler)
+count = 0
+while true
+  puts count
+  $stdout.flush
+  count += 1
+  sleep 1
+end

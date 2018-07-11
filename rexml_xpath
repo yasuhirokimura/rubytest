@@ -1,0 +1,14 @@
+#!/usr/bin/ruby -w
+
+$KCODE = 'UTF-8'
+require 'jcode'
+require 'rexml/document'
+
+doc = File.open('../template.html', 'r') {|input| REXML::Document.new(input) }
+puts doc.encoding
+items = REXML::XPath.match(doc, "//ul")
+puts items.length
+item3 = REXML::XPath.match(doc, "//ul[@id='test']")
+puts item3.length
+item3 = REXML::XPath.match(doc, "//xhtml:ul[@null:id='test']", {'null' => '', 'xhtml' => 'http://www.w3.org/1999/xhtml'})
+puts item3.length

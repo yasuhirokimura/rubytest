@@ -1,0 +1,17 @@
+#!/usr/bin/ruby -w
+
+require 'yaml'
+
+def nullfunc(arg)
+  puts arg
+end
+
+array = []
+
+array[0] = self.method(:nullfunc)
+array[1] = Proc.new { |arg| puts arg }
+
+DUMP_FILE_NAME = 'yamltest.yaml'
+
+File.open(DUMP_FILE_NAME, 'w') { |output| YAML::dump(array, output) }
+

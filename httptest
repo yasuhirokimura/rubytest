@@ -1,0 +1,60 @@
+#!/usr/bin/ruby -w
+
+require 'net/http'
+require 'net/https'
+Net::HTTP.version_1_2
+require 'time'
+
+urilist = ["http://www.home.utahime.org/",
+           "http://www.home.utahime.org/pukiwiki/index.php?FrontPage",
+           "http://www.home.utahime.org/hoge.html",
+           "http://wwww.home.utahime.org/",
+           "http://maybe.home.utahime.org/",
+           "http://bj.wakwak.com/",
+           "://www.home.utahime.org",
+           "https://www.home.utahime.org/",
+           "ftp://ftp.iij.ad.jp/",
+          ]
+
+urilist.each do |uri_str|
+  print('"', uri_str, '"', ":\n")
+  begin
+    uri = URI::parse(uri_str)
+  rescue URI::InvalidURIError => e
+    puts(e.message)
+    next
+  end
+#  URI.split(uri_str).each { |parts| print("\t\t", parts, "\n")}
+  print("\t", uri.to_s(), "\n");
+  case uri.scheme
+  when "http":
+  when "https":
+  else
+    print("\tscheme \"", uri.scheme , "\" is not supported.\n")
+    next
+  end
+  http = Net::HTTP.new(uri.host.to_s(), uri.port.to_s())
+  http.open_timeout = 10
+  if (uri.scheme == "https")
+    http.use_ssl = true
+    http.verify_mode = OpenSSL::SSL::VERIFY_PEER
+    http.ca_path = "/home/yasu/.certs/"
+  end
+  req = Net::HTTP::Head.new(uri.path.to_s() + "?" + uri.query.to_s())
+  begin
+    http.start()
+  rescue SocketError, SystemCallError, Timeout::Error => e
+    print("\t", e.message, "\n")
+    next
+  end
+  res = http.request(req)
+  print("\t", res.code, "\n")
+  lm = res['Last-Modified']
+  if (lm)
+    print("\t", lm, "\n")
+  else
+    print("\tThere is no Last-Modified header in response.\n")
+  end
+  http.finish()
+end
+

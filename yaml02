@@ -1,0 +1,8 @@
+#!/usr/bin/ruby -w
+
+require 'yaml'
+
+FILE_NAME = 'yaml02.yaml'
+
+a = File.open(FILE_NAME, 'r') { |input| YAML::load(input) }
+a.each {|s| puts s }

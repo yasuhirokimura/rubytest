@@ -1,0 +1,157 @@
+#!/usr/local/bin/ruby -W
+# -*-coding: utf-8;-*-
+
+UNPRIVILEGED_USER="yasu"
+
+if Process.uid != 0
+  $stderr.puts("このスクリプトはrootで実行する必要があります")
+  exit(false)
+end
+
+require 'etc'
+begin
+  entry = Etc.getpwnam(UNPRIVILEGED_USER)
+rescue ArgumentError => e
+  $stderr.puts("passwdデータベースに#{UNPRIVILEGED_USER}というユーザが見つかりません: #{e.message}")
+  exit(false)
+end
+
+puts("テストその1")
+begin
+  Process.euid = entry.uid
+rescue => e
+  $stderr.puts("実効ユーザIDを#{entry.uid}に設定するのに失敗しました: #{e.message}")
+  exit(false)
+end
+puts("実効ユーザIDを#{entry.uid}に設定するのに成功しました")
+begin
+  Process.euid = 0
+rescue => e
+  $stderr.puts("実効ユーザIDを0に戻すのに失敗しました: #{e.message}")
+  exit(false)
+end
+puts("実効ユーザIDを0に戻すのに成功しました")
+
+puts("\nテストその2")
+begin
+  Process.euid = entry.uid
+rescue => e
+  $stderr.puts("実効ユーザIDを#{entry.uid}に設定するのに失敗しました: #{e.message}")
+  exit(false)
+end
+puts("実効ユーザIDを#{entry.uid}に設定するのに成功しました")
+begin
+  Process.uid = entry.uid
+rescue => e
+  $stderr.puts("実ユーザIDを#{entry.uid}に設定するのに失敗しました: #{e.message}")
+  exit(false)
+end
+puts("実ユーザIDを#{entry.uid}に設定するのに成功しました")
+begin
+  Process.uid = 0
+rescue => e
+  $stderr.puts("実ユーザIDを0に戻すのに失敗しました: #{e.message}")
+  exit(false)
+end
+puts("実ユーザIDを0に戻すのに成功しました")
+begin
+  Process.euid = 0
+rescue => e
+  $stderr.puts("実効ユーザIDを0に戻すのに失敗しました: #{e.message}")
+  exit(false)
+end
+puts("実効ユーザIDを0に戻すのに成功しました")
+
+puts("\nテストその3")
+begin
+  Process.uid = entry.uid
+rescue => e
+  $stderr.puts("実ユーザIDを#{entry.uid}に設定するのに失敗しました: #{e.message}")
+  exit(false)
+end
+puts("実ユーザIDを#{entry.uid}に設定するのに成功しました")
+begin
+  Process.euid = entry.uid
+rescue => e
+  $stderr.puts("実効ユーザIDを#{entry.uid}に設定するのに失敗しました: #{e.message}")
+  exit(false)
+end
+puts("実効ユーザIDを#{entry.uid}に設定するのに成功しました")
+begin
+  Process.euid = 0
+rescue => e
+  $stderr.puts("実効ユーザIDを0に戻すのに失敗しました: #{e.message}")
+  exit(false)
+end
+puts("実効ユーザIDを0に戻すのに成功しました")
+begin
+  Process.uid = 0
+rescue => e
+  $stderr.puts("実ユーザIDを0に戻すのに失敗しました: #{e.message}")
+  exit(false)
+end
+puts("実ユーザIDを0に戻すのに成功しました")
+
+puts("\nテストその4")
+puts("リターンキーを叩いてください")
+gets
+begin
+  Process.gid = entry.gid
+rescue => e
+  $stderr.puts("実グループIDを#{entry.gid}に設定するのに失敗しました: #{e.message}")
+  exit(false)
+end
+puts("実グループIDを#{entry.gid}に設定するのに成功しました")
+begin
+  Process.egid = entry.gid
+rescue => e
+  $stderr.puts("実効グループIDを#{entry.gid}に設定するのに失敗しました: #{e.message}")
+  exit(false)
+end
+puts("実効グループIDを#{entry.gid}に設定するのに成功しました")
+begin
+  Process.uid = entry.uid
+rescue => e
+  $stderr.puts("実ユーザIDを#{entry.uid}に設定するのに失敗しました: #{e.message}")
+  exit(false)
+end
+puts("実ユーザIDを#{entry.uid}に設定するのに成功しました")
+begin
+  Process.euid = entry.uid
+rescue => e
+  $stderr.puts("実効ユーザIDを#{entry.uid}に設定するのに失敗しました: #{e.message}")
+  exit(false)
+end
+puts("実効ユーザIDを#{entry.uid}に設定するのに成功しました")
+puts("リターンキーを叩いてください")
+gets
+begin
+  Process.euid = 0
+rescue => e
+  $stderr.puts("実効ユーザIDを0に戻すのに失敗しました: #{e.message}")
+  exit(false)
+end
+puts("実効ユーザIDを0に戻すのに成功しました")
+begin
+  Process.uid = 0
+rescue => e
+  $stderr.puts("実ユーザIDを0に戻すのに失敗しました: #{e.message}")
+  exit(false)
+end
+puts("実ユーザIDを0に戻すのに成功しました")
+begin
+  Process.egid = 0
+rescue => e
+  $stderr.puts("実効グループIDを0に戻すのに失敗しました: #{e.message}")
+  exit(false)
+end
+puts("実効グループIDを0に戻すのに成功しました")
+begin
+  Process.gid = 0
+rescue => e
+  $stderr.puts("実グループIDを0に戻すのに失敗しました: #{e.message}")
+  exit(false)
+end
+puts("実グループIDを0に戻すのに成功しました")
+puts("リターンキーを叩いてください")
+gets

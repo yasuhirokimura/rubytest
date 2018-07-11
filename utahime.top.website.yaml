@@ -1,0 +1,491 @@
+#
+# メディア
+#
+---
+uri: "http://av.watch.impress.co.jp/"
+name: AV Watch
+owner: Impress Watch
+check_target_uri: "http://rss.rssad.jp/rss/avwatch/av.rdf"
+type: feed
+uri_suffix: "%m%d%H%M"
+category: media
+---
+uri: "http://japan.cnet.com/"
+name: CNET Japan
+owner: CNET Networks, Inc.
+check_target_uri: "http://feeds.japan.cnet.com/rss/cnet/all.rdf"
+type: feed
+uri_suffix: "%m%d%H%M"
+category: media
+---
+uri: "http://www.engadget.com/"
+name: Engadget
+check_target_uri: "http://www.engadget.com/rss.xml"
+type: feed
+category: media
+---
+uri: "http://japanese.engadget.com/"
+name: Engadget Japanese
+check_target_uri: "http://rss.rssad.jp/rss/engadget/rss"
+type: feed
+category: media
+---
+uri: "http://cloud.watch.impress.co.jp/"
+name: クラウド Watch
+owner: Impress Watch
+check_target_uri: "http://rss.rssad.jp/rss/cloudwatch/cloud.rdf"
+type: feed
+uri_suffix: "%m%d%H%M"
+category: media
+---
+uri: "http://game.watch.impress.co.jp/"
+name: Game Watch
+owner: Impress Watch
+check_target_uri: "http://rss.rssad.jp/rss/gamewatch/index.rdf"
+type: feed
+uri_suffix: "%m%d%H%M"
+category: media
+---
+uri: "http://gigazine.net/"
+name: GIGAZINE
+check_target_uri: "http://feed.rssad.jp/rss/gigazine/rss_1.0"
+type: feed
+category: media
+---
+uri: "http://gizmodo.com/"
+name: Gizmodo
+check_target_uri: "http://feeds.gawker.com/gizmodo/full"
+type: feed
+uri_suffix: "%m%d%H%M"
+category: media
+---
+uri: "http://internet.watch.impress.co.jp/"
+name: Internet Watch
+owner: Impress Watch
+check_target_uri: "http://rss.rssad.jp/rss/internetwatch/internet.rdf"
+type: feed
+uri_suffix: "%m%d%H%M"
+category: media
+---
+uri: "http://www.itmedia.co.jp/"
+name: ITmedia
+owner: アイティメディア
+check_target_uri: "http://rss.rssad.jp/rss/itmtop/1.0/topstory.xml"
+type: feed
+uri_suffix: "%m%d%H%M"
+category: media
+---
+uri: "http://japan.internet.com/"
+name: japan.internet.com
+owner: インターネットコム株式会社
+check_target_uri: "http://rss.internetcom.jp/rss/japaninternetcom/index.rdf?rss"
+type: feed
+uri_suffix: "%m%d%H%M"
+category: media
+---
+uri: "http://pc.watch.impress.co.jp/"
+name: PC Watch
+owner: Impress Watch
+check_target_uri: "http://rss.rssad.jp/rss/impresswatch/pcwatch.rdf"
+type: feed
+uri_suffix: "%m%d%H%M"
+category: media
+---
+uri: "http://slashdot.org/"
+name: Slashdot
+owner: SourceForge, Inc.
+check_target_uri: "http://rss.slashdot.org/Slashdot/slashdot"
+type: feed
+uri_suffix: "%m%d%H%M"
+category: media
+---
+uri: "http://slashdot.jp/"
+name: Slashdot Japan
+owner: OSDN
+check_target_uri: "http://rss.rssad.jp/rss/slashdot/slashdot.rss"
+type: feed
+uri_suffix: "%m%d%H%M"
+category: media
+---
+uri: "http://techcrunch.com/"
+name: TechCrunch
+check_target_uri: "http://feeds.feedburner.com/TechCrunch"
+type: feed
+uri_suffix: "%m%d%H%M"
+category: media
+---
+uri: "http://jp.techcrunch.com/"
+name: TechCrunch JAPAN
+check_target_uri: "http://feed.rssad.jp/rss/techcrunch/feed?rss"
+type: feed
+uri_suffix: "%m%d%H%M"
+category: media
+---
+uri: "http://kaden.watch.impress.co.jp/"
+name: 家電 Watch
+owner: Impress Watch
+check_target_uri: "http://rss.rssad.jp/rss/kadenwatch/kaden.rdf"
+type: feed
+uri_suffix: "%m%d%H%M"
+category: media
+---
+uri: "http://www.gizmodo.jp/"
+name: ギズモード・ジャパン
+check_target_uri: "http://feeds.gizmodo.jp/rss/gizmodo/index.xml"
+type: feed
+uri_suffix: "%m%d%H%M"
+category: media
+---
+uri: "http://k-tai.impress.co.jp/"
+name: ケータイ Watch
+owner: Impress Watch
+check_target_uri: "http://rss.rssad.jp/rss/k-taiwatch/k-tai.rdf"
+type: feed
+uri_suffix: "%m%d%H%M"
+category: media
+---
+uri: "http://labaq.com/"
+name: らばQ
+check_target_uri: "http://labaq.com/index.rdf"
+type: feed
+uri_suffix: "%m%d%H%M"
+category: media
+#
+# コンピュータ関連
+#
+---
+uri: "http://anthy.sourceforge.jp/"
+name: Anthy
+type: head
+uri_suffix: "%m%d%H%M"
+category: computer
+---
+uri: "http://sourceforge.jp/projects/bsfilter/"
+name: bsfilter
+type: feed
+check_target_uri: "http://sourceforge.jp/projects/bsfilter/releases/rss"
+uri_suffix: "%m%d%H%M"
+category: computer
+---
+uri: "http://davmail.sourceforge.net/"
+name: DavMail Gateway
+type: head
+uri_suffix: "%m%d%H%M"
+category: computer
+---
+uri: "http://www.debian.org/"
+name: Debian GNU/Linux
+owner: Debianプロジェクト
+type: head
+uri_suffix: "%m%d%H%M"
+category: computer
+---
+name: Dovecot
+owner: Timo Sirainen
+uri: http://www.dovecot.org/
+type: head
+uri_suffix: "%m%d%H%M"
+category: computer
+---
+uri: "http://openlab.ring.gr.jp/edict/eblook/"
+name: eblook
+type: head
+uri_suffix: "%m%d%H%M"
+category: computer
+---
+uri: "http://www.exactaudiocopy.de/"
+name: Exact Audio Copy
+owner: Andre Wiethoff
+check_target_uri: "http://www.exactaudiocopy.de/en/index.php/resources/whats-new/whats-new/"
+type: regexp
+regexp:
+  - '((?:[Jj]anuary|[Ff]ebruary|[Mm]arch|[Aa]pril|[Mm]ay|[Jj]une|[Jj]uly|[Aa]august|[Ss]eptember|[Oo]ctober|[Nn]ovember|[Dd]ecember)\s+\d\d?,\s+\d\d\d\d)'
+  - '\1'
+uri_suffix: "%m%d%H%M"
+category: computer
+---
+uri: "http://filezilla-project.org/"
+name: FileZilla
+check_target_uri: "http://filezilla-project.org/newsfeed.php"
+type: feed
+uri_suffix: "%m%d%H%M"
+category: computer
+---
+uri: "http://www.foobar2000.org/"
+name: foobar2000
+owner: Peter Pawlowski
+type: regexp
+regexp:
+  - '(20\d\d-\d\d-\d\d)'
+  - '\1'
+uri_suffix: "%m%d%H%M"
+category: computer
+---
+uri: "http://www.freebsd.org/"
+name: "FreeBSD(本家)"
+owner: The FreeBSD Project
+type: head
+uri_suffix: "%m%d%H%M"
+category: computer
+---
+uri: "http://www.jp.freebsd.org/"
+name: "FreeBSD(日本)"
+owner: FreeBSD友の会
+type: head
+uri_suffix: "%m%d%H%M"
+category: computer
+---
+uri: "http://gihyo.jp/admin/clip/01/fdt"
+name: FreeBSD Daily Topics
+owner: 後藤大地さん
+check_target_uri: "http://image.gihyo.co.jp/assets/f/fdt_atom.atom"
+type: feed
+uri_suffix: "%m%d%H%M"
+category: computer
+---
+uri: "http://www.freshports.org/"
+name: FreshPorts
+owner: DVL Software Limited
+check_target_uri: "http://www.freshports.org/backend/rss2.0.php"
+type: feed
+uri_suffix: "%m%d%H%M"
+category: computer
+---
+uri: "http://sourceforge.jp/projects/gnupack/"
+name: gnupack (cygwn + emacs package)
+owner: ksugitaさん
+check_target_uri: "http://d.hatena.ne.jp/ksugita0510/rss2"
+type: feed
+uri_suffix: "%m%d%H%M"
+category: computer
+---
+uri: "http://hikiwiki.org/ja/"
+name: Hiki
+type: regexp
+regexp:
+  - '(\d\d\d\d-\d\d-\d\d)'
+  - '\1'
+category: computer
+---
+uri: "http://ipq.jp/"
+name: IPQ
+owner: 株式会社ラット
+type: feed
+check_target_uri: "http://ipq.jp/atom.xml"
+uri_suffix: "%m%d%H%M"
+category: computer
+---
+uri: "http://janetter.net/jp/"
+name: "Janetter"
+owner: 株式会社ジェーン
+check_target_uri: "http://janetter.net/jp/history.html"
+type: head
+uri_suffix: "%m%d%H%M"
+category: computer
+---
+uri: "http://openlab.ring.gr.jp/edict/lookup/"
+name: "Lookup"
+type: head
+uri_suffix: "%m%d%H%M"
+category: computer
+---
+uri: "http://www.courier-mta.org/maildrop/"
+name: maildrop
+owner: Double Precision Inc.
+check_target_uri: "http://courier.svn.sourceforge.net/svnroot/courier/trunk/maildrop/ChangeLog"
+type: regexp
+regexp:
+  - '(\d\d\d\d\-\d\d\-\d\d)'
+  - '\1'
+category: computer
+---
+uri: "http://mecab.googlecode.com/svn/trunk/mecab/doc/index.html"
+name: MeCab
+owner: 工藤拓さん
+type: head
+uri_suffix: "%m%d%H%M"
+category: computer
+---
+uri: "http://www.mozilla.org/"
+name: Mozilla.org
+owner: The Mozilla Organization
+check_target_uri: http://blog.mozilla.org/about_mozilla/feed/
+type: feed
+uri_suffix: "%m%d%H%M"
+category: computer
+---
+uri: "http://www.mozilla-japan.org/"
+name: Mozilla Japan
+owner: Mozilla Japan
+check_target_uri: "http://www.mozilla.jp/blog/feed/"
+type: feed
+uri_suffix: "%m%d%H%M"
+category: computer
+---
+uri: "http://www.chiark.greenend.org.uk/~sgtatham/putty/"
+name: PuTTY
+owner: Simon Tatham
+type: regexp
+regexp:
+  - '<!--LASTMOD-->(.*)<!--END-->'
+  - '\1'
+category: computer
+---
+uri: "http://hp.vector.co.jp/authors/VA024651/"
+name: PuTTYjp
+owner: hdkさん
+type: head
+uri_suffix: "%m%d%H%M"
+category: computer
+---
+uri: "http://yebisuya.dip.jp/Software/PuTTY/"
+name: PuTTY ごった煮版
+owner: 蛭子屋双六さん
+type: head
+uri_suffix: "%m%d%H%M"
+category: computer
+---
+uri: "http://ice.hotmint.com/putty/"
+name: ICE IV+putty
+owner: Nagさん
+type: head
+uri_suffix: "%m%d%H%M"
+category: computer
+---
+uri: "http://www.htosh.com/"
+name: QText
+owner: 堀田俊哉さん
+type: regexp
+regexp:
+  - 'WWWC'
+  - '(\d\d\d\d/\d\d/\d\d\s+\d\d:\d\d)'
+  - '\1'
+uri_suffix: "%m%d%H%M"
+category: computer
+---
+uri: "http://www.nongnu.org/riece/"
+name: Riece
+owner: 上野乃毅さん
+type: regexp
+regexp:
+  - '(20\d\d/\d\d/\d\d\s+\d\d:\d\d:\d\d)'
+  - '\1'
+uri_suffix: "%m%d%H%M"
+category: computer
+---
+uri: "http://subversion.apache.org/"
+name: Subversion
+owner: The Apache Software Foundation
+check_target_uri: "http://subversion.apache.org/news.html"
+type: regexp
+regexp:
+  - '(20\d\d-\d\d-\d\d)'
+  - '\1'
+uri_suffix: "%m%d%H%M"
+category: computer
+---
+uri: "http://www.tdiary.org/"
+name: tDiary
+type: head
+uri_suffix: "%m%d%H%M"
+category: computer
+---
+uri: "http://tortoisesvn.tigris.org/"
+name: TortoiseSVN
+owner: CollabNet, Inc.
+type: regexp
+regexp:
+  - 'Released (\d\d?)\. ([A-Z][a-z]+) (20\d\d).'
+  - '\1 \2 \3'
+uri_suffix: "%m%d%H%M"
+category: computer
+---
+uri: "http://www.videolan.org/"
+name: VideoLAN
+check_target_uri: "http://www.videolan.org/news.html"
+type: regexp
+regexp:
+  - "<div class='date'>"
+  - '(20\d\d-\d\d-\d\d)'
+  - '\1'
+uri_suffix: "%m%d%H%M"
+category: computer
+---
+uri: "http://validator.w3.org/"
+name: W3C Markup Validator
+owner: W3C
+check_target_uri: "http://www.w3.org/QA/Tools/validator-whatsnew.atom"
+type: regexp
+regexp:
+  - '<title>'
+  - '(\d\d\d\d\-\d\d\-\d\d)'
+  - '\1'
+uri_suffix: "%m%d%H%M"
+category: computer
+---
+uri: "http://zsh.sourceforge.net/"
+name: Z shell
+type: head
+uri_suffix: "%m%d%H%M"
+category: computer
+---
+uri: "http://www.st.ryukoku.ac.jp/~kjm/security/memo/"
+name: セキュリティホール memo
+owner: 小島肇さん
+type: head
+uri_suffix: "%m%d%H%M"
+category: computer
+---
+uri: "http://blog.crypton.co.jp/mp/"
+name: メディアファージ事業部 ブログ
+owner: クリプトン・フューチャー・メディア株式会社
+check_target_uri: "http://blog.crypton.co.jp/mp/atom.xml"
+type: feed
+uri_suffix: "%m%d%H%M"
+category: computer
+#
+# その他
+#
+---
+name: Dairy Portal Z
+owner: ニフティ
+uri: "http://portal.nifty.com/"
+check_target_uri: "http://portal.nifty.com/rss/headline.rdf"
+type: feed
+uri_suffix: "%m%d%H%M"
+category: misc
+---
+uri: "http://www.magicspice.net/"
+name: Magic Spice Online
+check_target_uri: "http://www.magicspice.net/diarypro/diary.cgi"
+type: regexp
+regexp:
+  - '(\d\d\d\d/\d\d/\d\d\s+\d\d:\d\d)'
+  - '\1'
+uri_suffix: "%m%d%H%M"
+category: misc
+---
+uri: "http://www.hirax.net/"
+name: "::HIRAX.NET::"
+owner: ひらばやしじゅんさん
+check_target_uri: "http://www.hirax.net/rss"
+type: feed
+uri_suffix: "%m%d%H%M"
+category: misc
+---
+uri: "http://www.miyuki.jp/"
+name: でじなみ
+check_target_uri: "http://www.miyuki.jp/news/"
+type: regexp
+regexp:
+  - '(20\d\d)\.(\d\d?)\.(\d\d?)'
+  - '\1/\2/\3'
+uri_suffix: "%m%d%H%M"
+category: misc
+---
+name: ほぼ日刊イトイ新聞
+uri: "http://www.1101.com/"
+check_target_uri: "http://www.1101.com/rss/index.xml"
+type: feed
+uri_suffix: "%m%d%H%M"
+category: misc

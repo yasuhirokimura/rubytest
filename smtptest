@@ -1,0 +1,27 @@
+#!/usr/local/bin/ruby -W
+# -*-coding: utf-8;-*-
+
+MYHOSTNAME = `hostname`.chomp
+DESTINATION = 'rolling-vm-centos1.home.utahime.org'
+SENDER = 'yasu@utahime.org'
+#SENDER = 'yasu@hiroma.net'
+#SENDER = 'yasu.kimura@gmail.com'
+#SENDER = 'yasu@yahoo.co.jp'
+RECIPIENT = "yasu@#{DESTINATION}"
+#RECIPIENT = 'yasu@utahime.org'
+FROM = "Yasuhiro KIMURA <#{SENDER}>"
+TO = RECIPIENT
+SUBJECT = "Test"
+MESSAGE = <<End
+From: #{FROM}
+To: #{TO}
+Subject: #{SUBJECT}
+Date: #{Time.now.strftime("%a, %d %b %Y %T %z")}
+
+This is Test mail from #{MYHOSTNAME}.
+End
+
+require 'net/smtp'
+Net::SMTP.start(DESTINATION, Net::SMTP.default_port, MYHOSTNAME) do |smtp|
+  smtp.send_message(MESSAGE, SENDER, RECIPIENT)
+end
